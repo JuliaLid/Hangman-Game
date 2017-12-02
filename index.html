@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hangman</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+ 	<body>
+	 <!-- Headers and Nav Bar -->
+	 	<header id="masthead">
+	 		<div class="container">
+	 			<h1>Hangman</h1>
+	 		</div>
+	 	</header>
+	 <!-- Main content -->
+	 <div class="wrapper">
+		<div id="main-container" class="container">
+			<section class="main-section">
+				<h2>Minnesota Lakes Edition</h2>
+			<!-- 	<img class="auth-image" src="#" alt="Picture of the Lakes" >-->
+
+				<p>Press any key to get started!</p>
+						
+				<p>Wins <span id=winCounter></span> </p>
+				<p>Current word</p>
+				<div id="hold"> </div>
+				<p>Number of guesses remaining</p>
+				<div id="guessCounter"> </div>
+				<p>Letters already guessed</p>
+				<div id="letters"></div>
+			</section>
+				
+		<!-- CHold for potentially displaying a picture of the correct lake -->
+			<!-- <section class="sidebar">
+				<div id="connect">
+					
+				</div>
+			</section> -->
+
+		</div>
+	</div>
+	<script src="assets/javascript/game.js"></script>
+	</body>
+</html>
