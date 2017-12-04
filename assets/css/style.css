@@ -1,9 +1,14 @@
+html {
+  background: url("../images/Background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 34px;
-  color: #777;
- /* background: url("../images/concrete_seamless.png");
   width: 100%;*/
   height: 100%;
 }
@@ -13,9 +18,6 @@ body {
   margin: 0;
 }
 
-/* sticky footer styling */
-
-/* http://ryanfait.com/html5-sticky-footer/ */
 
 html,
 body {
@@ -26,101 +28,56 @@ body {
   height: auto !important;
   height: 100%;
   min-height: 100%;
-  margin: 0 auto -105px;
+  padding:20px;
 }
 
-
-/* general styling */
-
-.container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  clear: both;
-}
-
-h1,
-h2,
 p {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #402001;
 }
 
-
-h1,
-h2,
-h3 {
-  font-family: 'Poiret One', cursive;
-  font-weight: 700;
-  color: #6DBDD6;
-}
 
 h1 {
-  padding-top: 20px;
+ font-family: 'Dosis', sans-serif;
+  padding-top: 40px;
   padding-bottom: 20px;
-  font-size: 50px;
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 1em;
   line-height: 49px;
   text-align: center;
-}
-
-h2,
-h3 {
-  font-size: 22px;
-  text-align: center;
-}
-
-/* header */
-
-#masthead {
-  position: fixed;
-  z-index: 99;
-  width: 100%;
-  margin: 0 0 30px;
-  overflow: auto;
-  color: #fff;
-  background: #fff;
-  border-bottom: 2px solid #ccc;
-}
-
-
-
-/* sidebar */
-
-/*.sidebar {
-  float: right;
-  width: 100%;
-  max-width: 270px;
-  padding: 30px;
+  color: black;
+   -webkit-text-stroke: 1px white;
   margin-bottom: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
 }
 
-h3,
-.sidebar h2 {
-  padding-bottom: 20px;
-  margin-bottom: 15px;
-  line-height: 22px;
-  border-bottom: 2px solid #eee;
-}*/
-
+h2 {
+ font-family: 'Pacifico', cursive;
+ font-size: 30px;
+   font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+   color: #573544;
+}
 
 
 /* main */
 
-#main-container {
-  padding-top: 130px;
-}
-
 .main-section {
-  float: left;
   width: 100%;
   max-width: 650px;
   padding: 30px;
-  margin: 0 0 40px;
-  background: #fff;
+  margin: 0 auto;
+  background: #F2EBBF;
   border: 1px solid #ddd;
+  border-radius: 80px 5px;
 }
 
+#instructions {
+  text-align: center;
+  font-size: 22px;
+}
 
 /* Media queries*/
 
