@@ -25,11 +25,21 @@ function selectWord() {
 
 window.onload = selectWord();
 
+function playSound() {
+		// document.getElementById('lakeSounds').play();
+	var myAudio = document.getElementById("lakeSounds");
+  		if (myAudio.paused) {
+    		myAudio.play();
+		  } else {
+		    myAudio.pause();
+		  }
+		}
+	
 //game function
 document.onkeyup = function(event) {
 	
 	var userInput = String.fromCharCode(event.keyCode).toUpperCase();
-	
+
 	for (var j=0; j<wordChoice.length; j++){
 		if (wordChoice[j] === userInput){
 		answerArray[j] = userInput;
@@ -40,7 +50,6 @@ document.onkeyup = function(event) {
 		remainingLetters = wordChoice.length - counter;  //identify the number remaining letters
 		} 
 	};
-
 
 	if ((wrongGuess.indexOf(userInput)===-1) && (wordChoice.indexOf(userInput)===-1)){
 		wrongGuess.push(userInput);
