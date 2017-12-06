@@ -14,8 +14,7 @@ Create a web app that features dynamically updated HTML powered by JavaScript co
 
 
 ## Challenges
-* This assignment was harder than I expected. I found it challenging to add my own styling to Bootstrap components.
-* I figured out solutiosn to most of the challenges that I encounted, which was a satisfying experience.
+* I figured out solutiosn to most (bit not all) of the challenges that I encounted, which was a satisfying experience. 
 
 ## Feedback and Questions
 * Please comment on the general code structure. How can it be optimized?
