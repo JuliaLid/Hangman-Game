@@ -1,10 +1,10 @@
 //Declare global variables
-var words = ["pelican", "calhoun","harriet","nokomis","mantrap","minnetonka","itasca","vermillion"]; 
+var words = ["PELICAN", "CALHOUN","HARRIET","NOKOMIS","MANTRAP","MINNETONKA","ITASCA","VERMILLION"]; 
 var guessCount = 12;   //count of guesses									
 var wins = 0;		   // count of wins
 var answerArray = [];  //array for comparinguser input to the selected word
 var wrongGuess = [];   //array to hold wrong guesses
-var wordChoice;        // rand
+var wordChoice;        // random word selected from the array
 var remainingLetters;
 var counter =0; //counts successful guesses
 
@@ -18,16 +18,18 @@ function selectWord() {
 	console.log(wordChoice);	
 	document.getElementById("hold").innerHTML=(answerArray.join(" "));
 	document.getElementById("guessCounter").innerHTML=guessCount;
+	document.getElementById("reset").style.visibility = 'hidden';
 }
 
 //call selectWord funciton on window load
+
 window.onload = selectWord();
 
 //game function
 document.onkeyup = function(event) {
 	
-	var userInput = String.fromCharCode(event.keyCode).toLowerCase();
-
+	var userInput = String.fromCharCode(event.keyCode).toUpperCase();
+	
 	for (var j=0; j<wordChoice.length; j++){
 		if (wordChoice[j] === userInput){
 		answerArray[j] = userInput;
@@ -45,31 +47,43 @@ document.onkeyup = function(event) {
 		document.getElementById("letters").innerHTML = wrongGuess +",   ";
 	};
 
-		guessCount--; //decrement the number of guesses regardless of outcome
-		document. getElementById("guessCounter").innerHTML = guessCount;
+	guessCount--; //decrement the number of guesses regardless of outcome
+	document. getElementById("guessCounter").innerHTML = guessCount;
 	
-	if ((remainingLetters===0) || (guessCount <0)) {
-		// endGame();
-		wins++;
-		console.log(wins);
-		document. getElementById("winCounter").innerHTML = 	wins;
-		gameReset();
-	}
+	if ((guessCount===0) && (remainingLetters>0)) {
+			console.log ("You lost")
+			document. getElementById("guessCounter").innerHTML = "Sorry, you're out of guesses";
+			gameEnd();
+	} else 
+
+	if ((guessCount>0) && (remainingLetters <=0)) {
+			wins++;
+			document. getElementById("winCounter").innerHTML = 	wins;
+			document. getElementById("guessCounter").innerHTML = guessCount + " guesses left. You are so smart!";
+			gameEnd();
+	};
+}
+
+
+function gameEnd() {
+	document.getElementById("reset").style.visibility = 'visible';
+
+	// console.log("Game over. Please stop input!")
+		// document.body.addEventListener("keydown", function stopInput(event) {
+	// 	event.preventDefault();
+	// 	event.stopPropagation();
+	// 	this.removeEventListener("keydown",stopInput);
+	// 	});
 }
 
 //resetting the game while keeping the number of wins
 function gameReset(){
-	//remove randomly generated word from the array if it's a win
-	// if(words.indexOf(answerArray) > -1) {man
-	// 	Words.splice(wordChoice,1)
-	// }
 	wrongGuess = [];
 	answerArray = [];
-	counter = 0
-	guessCount = 12
+	counter = 0;
+	guessCount = 12;
 	document.getElementById("letters").innerHTML = " ";
 	document. getElementById("guessCounter").innerHTML = " ";
-	// document. getElementById("loss").innerHTML = " ";
 	selectWord();
-}
+};
 
